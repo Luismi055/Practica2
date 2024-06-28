@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        :root {
+            --primary-color: #ff5733; /* Naranja */
+            --secondary-color: #33c4ff; /* Azul Claro */
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            color-scheme: light dark;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #33c4ff, #ff5733);
+            color: white;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 30%;
+            margin: auto;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        label {
+            color: var(--light-color);
+        }
+
+        input[type="number"] {
+            padding: 0.5rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 0.25rem;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        input[type="submit"] {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--warning-color);
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="eventHandler(event)">
+        <label for="numeroInicial">Numero Inicial:</label>
+        <input type="number" id="numeroInicial" name="numeroInicial" required>
+        <label for="numeroFinal">Numero Limite:</label>
+        <input type="number" id="numeroFinal" name="numeroFinal" required>
+        <input type="submit" value="Enviar">
+    </form>
+    <script src="scrip.js">
+        
+        function eventHandler(event) {
+            event.preventDefault();
+            const numeroInicial = event.target.numeroInicial.value;
+            const numeroFinal = event.target.numeroFinal.value;
+            console.log(`Numero Inicial: ${numeroInicial}, Numero Limite: ${numeroFinal}`);
+        }
+    </script>
+</body>
+
+</html>
